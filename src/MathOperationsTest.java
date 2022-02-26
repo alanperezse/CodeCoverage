@@ -52,9 +52,16 @@ class MathOperationsTest {
 
     @Test
     void randEven() {
-        System.out.println("Please manually check this method");
-        int[] param = {0, 2, 3, 5, 7, 8, 11};
-        MathOperations.randEven(param);
-        assertTrue(true);
+        // Standard
+        int[] param1 = {0, 2, 3, 5, 7, 8, 11};
+        int[] rtn1 = MathOperations.randEven(param1);
+        int[] exp1 = {0, 2, 8};
+        assertArrayEquals(exp1, rtn1);
+
+        // Negative numbers
+        int[] param2 = {-100, -1, 2, 6, 8, 9, 10};
+        int[] rtn2 = MathOperations.randEven(param2);
+        int[] exp2 = {-100, 2, 6, 8, 10};
+        assertArrayEquals(exp2, rtn2);
     }
 }
